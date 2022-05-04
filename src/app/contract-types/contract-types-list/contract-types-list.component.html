@@ -1,0 +1,8 @@
+<ul *ngFor="let contractType of contractTypes">
+  <li>
+    <label *ngIf="!contractType.editing" (click)="onClick(contractType)">{{contractType.name}}</label>
+    <input autofocus *ngIf="contractType.editing" type="text" [value]="contractType.name"
+      (keyup.escape)="onCancelEdit(contractType)" (keyup.enter)="onCancelEdit(contractType)"
+      (blur)="onCancelEdit(contractType)">
+  </li>
+</ul>
